@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import random
+import timeit
 
 def Convert_Text(_string):
     """
@@ -195,3 +196,17 @@ def Decode(n, d, cipher_text):
         message_nums.append(M)    
     message = Convert_Num(message_nums)
     return message
+
+#Brute force method of finding factors.
+def factorize(n):
+# n is a number, return the smallest factor of n
+    for i in range(2,n-1): # start iterations at 2 and end at the maximum in the list -1
+        if n % i == 0: # if n is divisible by the current integer (i) return i becuase this is a factor
+            return i
+    return False # if n is not divisible by any of the integers return FALSE
+
+def bruteForceFactor(n):
+    timeit.default_timer()
+    resultfact = factorize(n) 
+    print("p = ",resultfact,'q = ', n//resultfact)
+    print("Time neededto factor number: ",timeit.default_timer() )
