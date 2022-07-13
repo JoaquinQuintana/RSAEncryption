@@ -209,4 +209,4 @@ def bruteForceFactor(n):
     timeit.default_timer()
     resultfact = factorize(n) 
     print("p = ",resultfact,'q = ', n//resultfact)
-    print("Time neededto factor number: ",timeit.default_timer() )
+    print("Time needed to factor number: ",timeit.default_timer() )
